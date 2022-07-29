@@ -25,12 +25,16 @@ app.set('view engine', 'hypatia')
 
 
 app.get('/',(req,res) => { 
-    res.render('1', { title: 'hi', body:'life is pain'})
+    res.render('temp1', { title: 'hi', body:'life is pain'})
 })
 
+app.get('/baker/:firstName', function(req, res) {
+  console.log(req.params)
+  console.log(req.query)
+  res.render('1', { title: 'The world of baking', body:'baking is a struggle but not as much as loving to keep baking ok baking yeah.~'})
+})
 
-
-app.get('/:cake', (req, res) => {
+app.get('/cake', (req, res) => {
     res.send(`
       <h1>'There are so many cool types of cakes'</h1>
       <img src="https://cafedelites.com/wp-content/uploads/2018/05/Red-Velvet-Cake-IMAGE-43.jpg" >
@@ -38,37 +42,37 @@ app.get('/:cake', (req, res) => {
       <img src="https://sallysbakingaddiction.com/wp-content/uploads/2019/04/layer-lavender-cake.jpg" >
     `)
   })
-  app.get('/:coffee', function(req, res) {
+  app.get('/coffee', function(req, res) {
     console.log(req.params)
     console.log(req.query)
     res.render('1', { title: 'Love of coffee', body:'baking is a struggle but not as much as loving to keep baking ok baking yeah.~'})
   })
-  app.get('/:Bread', function(req, res) {
+  app.get('/Bread', function(req, res) {
     console.log(req.params)
     console.log(req.query)
     res.render('1', { title: 'Love of Bread', body:'baking is a struggle but not as much as loving to keep baking ok baking yeah.~'})
   })
-  app.get('/:Savory pastries', function(req, res) {
+  app.get('/Savory pastries', function(req, res) {
     console.log(req.params)
     console.log(req.query)
     res.render('1', { title: 'Love of Savory pastries', body:'baking is a struggle but not as much as loving to keep baking ok baking yeah.~'})
   })
-  app.get('/:Sugar art', function(req, res) {
+  app.get('/Sugar art', function(req, res) {
     console.log(req.params)
     console.log(req.query)
     res.render('1', { title: 'Love of sugar art', body:'baking is a struggle but not as much as loving to keep baking ok baking yeah.~'})
   })
-  app.get('/:Chocolates', function(req, res) {
+  app.get('/Chocolates', function(req, res) {
     console.log(req.params)
     console.log(req.query)
     res.render('1', { title: 'Love of Chocolates', body:'baking is a struggle but not as much as loving to keep baking ok baking yeah.~'})
   })
-  app.get('/:Pies', function(req, res) {
+  app.get('/Pies', function(req, res) {
     console.log(req.params)
     console.log(req.query)
     res.render('1', { title: 'Love of pies', body:'baking is a struggle but not as much as loving to keep baking ok baking yeah.~'})
   })
-  app.get('/:Dounuts', function(req, res) {
+  app.get('/Dounuts', function(req, res) {
     console.log(req.params)
     console.log(req.query)
     res.render('1', { title: 'Love of dounuts', body:'baking is a struggle but not as much as loving to keep baking ok baking yeah.~'})
@@ -79,12 +83,7 @@ app.get('/:cake', (req, res) => {
       res.render('1', {body: 'My leastfavorite desert is veggies..if that makes.'})
     
   })
-  app.get('/baker/:firstName', function(req, res) {
-    console.log(req.params)
-    console.log(req.query)
-    res.render('1', { title: 'The world of baking', body:'baking is a struggle but not as much as loving to keep baking ok baking yeah.~'})
-  })
-  
+
 
 app.listen(port,() => {
     console.log('I am listening on port' , port)
